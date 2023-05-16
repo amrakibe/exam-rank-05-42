@@ -3,25 +3,11 @@
 ASpell::ASpell(){}
 ASpell::~ASpell(){}
 
-ASpell::ASpell(const ASpell &obj)
-{
-    *this = obj;
-}
-
-ASpell&ASpell::operator=(const  ASpell &obj)
-{
-    if(this != &obj)
-    {
-        this->name  = obj.name;
-        this->effects = obj.effects;
-    }
-    return(*this);
-}
-
 std::string const &ASpell::getName()const
 {
     return(this->name);
 }
+
 std::string const &ASpell::getEffects()const
 {
     return(this->effects);

@@ -34,18 +34,14 @@ void Warlock::introduce() const
 
 void Warlock::learnSpell(ASpell *sp)
 {
-    if(sp)
-        map.insert(std::pair<std::string, ASpell*>(sp->getName(),sp->clone()));
+    map[sp->getName()] = sp;
 }
+
 void Warlock::forgetSpell(std::string sp_n)
 {
-    std::map<std::string, ASpell*>::iterator it = map.find(sp_n);
-    if(it != map.end())
-    {
-        delete it->second;
-        map.erase(sp_n);
-    }
+    map.erase(sp_n);
 }
+
 void Warlock::launchSpell(std::string sp_name, const ATarget &sp_)
 {
     std::map<std::string, ASpell*>::iterator it = map.find(sp_name);

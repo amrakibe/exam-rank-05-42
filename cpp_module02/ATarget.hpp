@@ -7,14 +7,11 @@ class  ATarget
 {
     protected:
         std::string type;
-
     public:
         ATarget();
         ATarget(std::string const &type);
         virtual ~ATarget();
         std::string  const &getType()const;
-        ATarget(const ATarget &obj);
-        ATarget&operator=(const ATarget &obj);
         virtual ATarget *clone()const = 0;
         void getHitBySpell(const ASpell &sp)const;
 };

@@ -16,5 +16,4 @@ class  ATarget
         ATarget&operator=(const ATarget &obj);
         virtual ATarget *clone()const = 0;
         void getHitBySpell(const ASpell &sp)const;
-
 };
